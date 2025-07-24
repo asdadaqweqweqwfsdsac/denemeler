@@ -1,0 +1,29 @@
+-- Basit GUI oluştur
+local player = game.Players.LocalPlayer
+local screenGui = Instance.new("ScreenGui", player.PlayerGui)
+screenGui.Name = "AnimasyonGui"
+
+local button = Instance.new("TextButton", screenGui)
+button.Size = UDim2.new(0, 200, 0, 50)
+button.Position = UDim2.new(0.5, -100, 0.5, -25)
+button.Text = "Animasyonu Başlat"
+button.BackgroundColor3 = Color3.fromRGB(50, 150, 255)
+button.TextColor3 = Color3.new(1,1,1)
+button.Font = Enum.Font.SourceSansBold
+button.TextSize = 24
+
+-- Animasyon fonksiyonu (örnek: sağ kolu kaldır)
+local function playAnimation()
+    local character = player.Character or player.CharacterAdded:Wait()
+    local humanoid = character:FindFirstChildOfClass("Humanoid")
+    if not humanoid then return end
+
+    -- Sadece R6 karakterler için örnek (R15 için eklem isimleri farklıdır)
+    local rightShoulder = character:FindFirstChild("Right Shoulder", true)
+    if rightShoulder and rightShoulder:IsA("Motor6D") then
+        -- Kolun açısını değiştir (örnek animasyon)
+        rightShoulder.C0 = rightShoulder.C0 * CFrame.Angles(-math.pi/2, 0, 0)
+    end
+end
+
+button.MouseButton1Click:Connect(playAnimation)
