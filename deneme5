@@ -510,10 +510,15 @@ end
 Draggable(i1)
 
 lbl("by MyWorld")
-btn("copy discord",function()
-		setclipboard("discord.gg/QMy5f6DrbH")
-		end)
-	end)
+btn("copy discord", function()
+	local text = "https://discord.gg/QMy5f6DrbH"
+	if setclipboard then
+		setclipboard(text)
+	else
+		insGet(uis,"SetClipboardText")(text)
+	end
+end)
+
 lbl("discord.gg/QMy5f6DrbH")
 
 local allowshiftlock=nil
@@ -2406,5 +2411,3 @@ if not pcall(insSet,i10,"Parent",FindFirstChildOfClass(game,"CoreGui")) then
 	twait(3)
 	insSet(i7,"Text",guiTheme.guiTitle)
 end
-
---by MyWorld
