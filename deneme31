@@ -509,20 +509,17 @@ end
 
 Draggable(i1)
 
-lbl("by MyWorld")
-lbl("discord.gg/QMy5f6DrbH")
-
-local allowshiftlock=true
-local ctrltp=true
-local placeholders=true
-local clickfling=true
-local highlightflingtargets=true
-local discharscripts=true
-local flingchangestate=true
-local respawntp=true
-local breakjointsmethod=true
-local simrad=true
-local hidedeatheffect=true
+local allowshiftlock=nil
+local ctrltp=nil
+local placeholders=nil
+local clickfling=nil
+local highlightflingtargets=nil
+local discharscripts=nil
+local flingchangestate=nil
+local respawntp=nil
+local breakjointsmethod=nil
+local simrad=false
+local hidedeatheffect=nil
 
 local c=nil
 local stopreanimate=function() 
@@ -2312,10 +2309,126 @@ end)
 
 
 
-btn("empty reanimate (no animations)", reanimate)
+
 insSet(btn("stop current script",stopreanimate),"TextColor3",c3(0.75,0,0))
 
 
+
+local swtc=function(txt,options,onchanged)
+	local current=0
+	local swtcbtn=nil
+	local btnpressed=function()
+		current=current+1
+		if current>#options then
+			current=1
+		end
+		local option=options[current]
+		insSet(swtcbtn,"Text",txt..": "..option.text)
+		onchanged(option.value)
+	end
+	swtcbtn=btn("change",btnpressed)
+	btnpressed()
+	return swtcbtn
+end
+
+swtc("client sided placeholders",{
+	{value=true,text="yes"},
+	{value=false,text="no"}
+},function(v)
+	placeholders=v
+end)
+
+swtc("highlight fling targets",{
+	{value=true,text="yes"},
+	{value=false,text="no"}
+},function(v)
+	highlightflingtargets=v
+end)
+
+swtc("allow shiftlock",{
+	{value=true,text="yes"},
+	{value=false,text="no"}
+},function(v)
+	allowshiftlock=v
+end)
+
+swtc("ctrl click tp",{
+	{value=true,text="yes"},
+	{value=false,text="no"}
+},function(v)
+	ctrltp=v
+end)
+
+swtc("click fling",{
+	{value=true,text="yes"},
+	{value=false,text="no"}
+},function(v)
+	clickfling=v
+end)
+
+swtc("fling enhancements",{
+	{value=3,text="all"},
+	{value=1,text="changestate physics"},
+	{value=2,text="disable sitting"},
+	{value=0,text="none"},
+},function(v)
+	flingchangestate=v
+end)
+
+swtc("respawn tp",{
+	{value=3,text="hide body"},
+	{value=0,text="stay at spawn"},
+	{value=1,text="random tp close"},
+	{value=2,text="behind char"}
+},function(v)
+	respawntp=v
+end)
+
+local disguiscripts=nil
+swtc("new gui scripts",{
+	{value=true,text="disable"},
+	{value=false,text="keep"}
+},function(v)
+	disguiscripts=v
+end)
+Connect(insGet(pg,"DescendantAdded"),function(v)
+	if c and disguiscripts and IsA(v,"Script") then --mind Enum.RunContext.Client
+		insSet(v,"Disabled",true) 
+	end
+end)
+
+swtc("new character scripts",{
+	{value=function(v)
+		if IsA(v,"Script") then --mind Enum.RunContext.Client
+			insSet(v,"Disabled",true)
+		end
+	end,text="disable"},
+	{value=false,text="keep"}
+},function(v)
+	discharscripts=v
+end)
+
+swtc("breakjoints",{
+	{value=1,text="breakjoints+health"},
+	{value=2,text="health or breakjoints"},
+	{value=3,text="breakjoints"}
+},function(v)
+	breakjointsmethod=v
+end)
+
+swtc("coregui death effect",{
+	{value=true,text="disable"},
+	{value=false,text="dont modify"},
+},function(v)
+	hidedeatheffect=v
+end)
+
+swtc("set simulation radius",{
+	{value=true,text="yes"},
+	{value=false,text="no"},
+},function(v)
+	simrad=v
+end)
 
 if replicatesignal then
 	local i11=i("Frame")
@@ -2344,6 +2457,7 @@ if replicatesignal then
 	local s=i4
 	i4=i11
 	lbl("Use permadeath?")
+	lbl("(detectable with no false positives)")
 	lbl("This executor supports permadeath.")
 	lbl("permadeath preload method")
 	insSet(i13,"Parent",i11)
