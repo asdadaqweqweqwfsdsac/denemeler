@@ -510,28 +510,19 @@ end
 Draggable(i1)
 
 lbl("by MyWorld")
-btn("copy discord", function()
-	local text = "https://discord.gg/QMy5f6DrbH"
-	if setclipboard then
-		setclipboard(text)
-	else
-		insGet(uis,"SetClipboardText")(text)
-	end
-end)
-
 lbl("discord.gg/QMy5f6DrbH")
 
-local allowshiftlock=nil
-local ctrltp=nil
-local placeholders=nil
-local clickfling=nil
-local highlightflingtargets=nil
-local discharscripts=nil
-local flingchangestate=nil
-local respawntp=nil
-local breakjointsmethod=nil
-local simrad=false
-local hidedeatheffect=nil
+local allowshiftlock=true
+local ctrltp=true
+local placeholders=true
+local clickfling=true
+local highlightflingtargets=true
+local discharscripts=true
+local flingchangestate=true
+local respawntp=true
+local breakjointsmethod=true
+local simrad=true
+local hidedeatheffect=true
 
 local c=nil
 local stopreanimate=function() 
@@ -2323,8 +2314,6 @@ end)
 
 btn("empty reanimate (no animations)", reanimate)
 insSet(btn("stop current script",stopreanimate),"TextColor3",c3(0.75,0,0))
-
-
 
 
 
