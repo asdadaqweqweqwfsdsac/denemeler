@@ -2407,4 +2407,4 @@ if not pcall(insSet,i10,"Parent",FindFirstChildOfClass(game,"CoreGui")) then
 	insSet(i7,"Text",guiTheme.guiTitle)
 end
 
-by MyWorld
+--by MyWorld
