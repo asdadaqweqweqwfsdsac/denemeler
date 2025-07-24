@@ -514,7 +514,7 @@ local ctrltp=true
 local placeholders=true
 local clickfling=true
 local highlightflingtargets=true
-local discharscripts=TextureId
+local discharscripts=true
 local flingchangestate=true
 local respawntp=true
 local breakjointsmethod=true
@@ -533,10 +533,6 @@ local stopreanimate=function()
 	return false
 end
 local reanimate=function()
-	--[[
-		FDless reanimate by MyWorld
-		optimize the optimized
-	]]
 
 	local novoid = true --prevents parts from going under workspace.FallenPartsDestroyHeight if you control them
 	local speedlimit = 3000 --makes your parts move slower if the magnitude of their velocity is higher than this
