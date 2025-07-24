@@ -509,17 +509,20 @@ end
 
 Draggable(i1)
 
-local allowshiftlock=true
-local ctrltp=true
-local placeholders=true
-local clickfling=true
-local highlightflingtargets=true
-local discharscripts=true
-local flingchangestate=true
-local respawntp=true
-local breakjointsmethod=true
-local simrad=true
-local hidedeatheffect=true
+lbl("by MyWorld")
+lbl("discord.gg/QMy5f6DrbH")
+
+local allowshiftlock=nil
+local ctrltp=nil
+local placeholders=nil
+local clickfling=nil
+local highlightflingtargets=nil
+local discharscripts=nil
+local flingchangestate=nil
+local respawntp=nil
+local breakjointsmethod=nil
+local simrad=false
+local hidedeatheffect=nil
 
 local c=nil
 local stopreanimate=function() 
@@ -533,6 +536,10 @@ local stopreanimate=function()
 	return false
 end
 local reanimate=function()
+	--[[
+		FDless reanimate by MyWorld
+		optimize the optimized
+	]]
 
 	local novoid = true --prevents parts from going under workspace.FallenPartsDestroyHeight if you control them
 	local speedlimit = 3000 --makes your parts move slower if the magnitude of their velocity is higher than this
@@ -2328,6 +2335,7 @@ local swtc=function(txt,options,onchanged)
 end
 
 
+
 if replicatesignal then
 	local i11=i("Frame")
 	local i12=i("UIListLayout")
@@ -2411,5 +2419,3 @@ if not pcall(insSet,i10,"Parent",FindFirstChildOfClass(game,"CoreGui")) then
 	twait(3)
 	insSet(i7,"Text",guiTheme.guiTitle)
 end
-
-clickfling
