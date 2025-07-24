@@ -2101,24 +2101,31 @@ btn("Deneme", function()
 
 	local jumplerps=function()
 		local Animation_Speed = 0.45 / deltaTime
-	LeftShoulder.C0=Lerp(LeftShoulder.C0,cfMul(cf(-1,0.5,0),angles(0,-1.5707963267948966,0)),deltaTime) 
-LeftHip.C0=Lerp(LeftHip.C0,cfMul(cf(-1,-1,0),angles(0,-1.5707963267948966,0)),deltaTime) 
-RightHip.C0=Lerp(RightHip.C0,cfMul(cf(1,-1,0),angles(0,1.5707963267948966,0)),deltaTime) 
-RootJoint.C0=Lerp(RootJoint.C0,angles(-1.5707963267948966,0,3.141592653589793),deltaTime) 
-RightShoulder.C0=Lerp(RightShoulder.C0,cfMul(cf(1,0.5,0),angles(0,1.5707963267948966,0)),deltaTime) 
-Neck.C0=Lerp(Neck.C0,cfMul(cf(0,1,0),angles(-1.5707963267948966,0,3.141592653589793)),deltaTime) 
+		RootJoint.C1 = Lerp(RootJoint.C1,ROOTC0, 0.2 / Animation_Speed)
+		Neck.C1 = Lerp(Neck.C1,cfMul(cf(0, -0.5, 0),angles(-1.5707963267948966, 0, 3.141592653589793)), 0.2 / Animation_Speed)
+		RightHip.C1 = Lerp(RightHip.C1,cfMul(cf(0.5, 1, 0),angles(0, 1.5707963267948966, 0)), 0.7 / Animation_Speed)
+		LeftHip.C1 = Lerp(LeftHip.C1,cfMul(cf(-0.5, 1, 0),angles(0, -1.5707963267948966, 0)), 0.7 / Animation_Speed)
 
---MW_animatorProgressSave: BoySpaceHair_Handle,,0,0,1,0,0,0,1,-1.40,0,0,1,0,1080,0,1,-0.15027225017547607,0,0,1,0,0,0,1,MeshPartAccessory_Handle,,0,0,1,180,,0,1,-1.27,0,0,1,90,10,0,1,0.024189945310354233,0,0,1,90,0,0,1,MeshPartAccessory_Handle,,0,0,1,90,,0,1,-0.75,0,0,1,90,0,0,1,2,0,0,1,0,0,0,1,LeftArm,-1,0,0,1,0,0,0,1,0.5,0,0,1,-90,0,0,1,0,0,0,1,0,0,0,1,MeshPartAccessory_Handle,,0,0,1,90,,0,1,-1.29,0,0,1,90,10,0,1,0.07143688201904297,0,0,1,,,0,1,LeftLeg,-1,0,0,1,0,0,0,1,-1,0,0,1,-90,0,0,1,0,0,0,1,0,0,0,1,RightLeg,1,0,0,1,0,0,0,1,-1,0,0,1,90,0,0,1,0,0,0,1,0,0,0,1,MeshPartAccessory_Handle,,0,0,1,,,0,1,,0,0,1,0,,0,1,,0,0,1,15,,0,1,Torso,0,0,0,1,-90,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,180,0,0,1,RightArm,1,0,0,1,0,0,0,1,0.5,0,0,1,90,0,0,1,0,0,0,1,0,0,0,1,MeshPartAccessory_Handle,,0,0,1,90,0,0,1,-0.75,0,0,1,-90,0,0,1,2,0,0,1,,0,0,1,Head,0,0,0,1,-90,0,0,1,1,0,0,1,0,0,0,1,0,0,0,1,180,0,0,1end
+		RootJoint.C0 = Lerp(RootJoint.C0,ROOTC0, 0.2 / Animation_Speed)
+		Neck.C0 = Lerp(Neck.C0,cfMul(NECKC0,angles(-0.3490658503988659, 0, 0)), 0.2 / Animation_Speed)
+		RightShoulder.C0 = Lerp(RightShoulder.C0,cfMul(cfMul(cf(1.5, 0.5, 0),angles(-0.6981317007977318, 0, 0.3490658503988659)), RIGHTSHOULDERC0), 0.2 / Animation_Speed)
+		LeftShoulder.C0 = Lerp(LeftShoulder.C0,cfMul(cfMul(cf(-1.5, 0.5, 0),angles(-0.6981317007977318, 0, -0.3490658503988659)), LEFTSHOULDERC0), 0.2 / Animation_Speed)
+		RightHip.C0 = Lerp(RightHip.C0,cfMul(cf(1, -1, -0.3),angles(0, 1.5707963267948966, 0),angles(-0.08726646259971647, 0, -0.3490658503988659)), 0.2 / Animation_Speed)
+		LeftHip.C0 = Lerp(LeftHip.C0,cfMul(cf(-1, -1, -0.3),angles(0, -1.5707963267948966, 0),angles(-0.08726646259971647, 0, 0.3490658503988659)), 0.2 / Animation_Speed)	
+	end
 	local falllerps=function()
 		local Animation_Speed = 0.45 / deltaTime
-		LeftShoulder.C0=Lerp(LeftShoulder.C0,cfMul(cf(-1,0.5,0),angles(0,-1.5707963267948966,0)),deltaTime) 
-LeftHip.C0=Lerp(LeftHip.C0,cfMul(cf(-1,-1,0),angles(0,-1.5707963267948966,0)),deltaTime) 
-RightHip.C0=Lerp(RightHip.C0,cfMul(cf(1,-1,0),angles(0,1.5707963267948966,0)),deltaTime) 
-RootJoint.C0=Lerp(RootJoint.C0,angles(-1.5707963267948966,0,3.141592653589793),deltaTime) 
-RightShoulder.C0=Lerp(RightShoulder.C0,cfMul(cf(1,0.5,0),angles(0,1.5707963267948966,0)),deltaTime) 
-Neck.C0=Lerp(Neck.C0,cfMul(cf(0,1,0),angles(-1.5707963267948966,0,3.141592653589793)),deltaTime) 
+		RootJoint.C1 = Lerp(RootJoint.C1,ROOTC0, 0.2 / Animation_Speed)
+		Neck.C1 = Lerp(Neck.C1,cfMul(cf(0, -0.5, 0),angles(-1.5707963267948966, 0, 3.141592653589793)), 0.2 / Animation_Speed)
+		RightHip.C1 = Lerp(RightHip.C1,cfMul(cf(0.5, 1, 0),angles(0, 1.5707963267948966, 0)), 0.7 / Animation_Speed)
+		LeftHip.C1 = Lerp(LeftHip.C1,cfMul(cf(-0.5, 1, 0),angles(0, -1.5707963267948966, 0)), 0.7 / Animation_Speed)
 
---MW_animatorProgressSave: BoySpaceHair_Handle,,0,0,1,0,0,0,1,-1.40,0,0,1,0,1080,0,1,-0.15027225017547607,0,0,1,0,0,0,1,MeshPartAccessory_Handle,,0,0,1,180,,0,1,-1.27,0,0,1,90,10,0,1,0.024189945310354233,0,0,1,90,0,0,1,MeshPartAccessory_Handle,,0,0,1,90,,0,1,-0.75,0,0,1,90,0,0,1,2,0,0,1,0,0,0,1,LeftArm,-1,0,0,1,0,0,0,1,0.5,0,0,1,-90,0,0,1,0,0,0,1,0,0,0,1,MeshPartAccessory_Handle,,0,0,1,90,,0,1,-1.29,0,0,1,90,10,0,1,0.07143688201904297,0,0,1,,,0,1,LeftLeg,-1,0,0,1,0,0,0,1,-1,0,0,1,-90,0,0,1,0,0,0,1,0,0,0,1,RightLeg,1,0,0,1,0,0,0,1,-1,0,0,1,90,0,0,1,0,0,0,1,0,0,0,1,MeshPartAccessory_Handle,,0,0,1,,,0,1,,0,0,1,0,,0,1,,0,0,1,15,,0,1,Torso,0,0,0,1,-90,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,180,0,0,1,RightArm,1,0,0,1,0,0,0,1,0.5,0,0,1,90,0,0,1,0,0,0,1,0,0,0,1,MeshPartAccessory_Handle,,0,0,1,90,0,0,1,-0.75,0,0,1,-90,0,0,1,2,0,0,1,,0,0,1,Head,0,0,0,1,-90,0,0,1,1,0,0,1,0,0,0,1,0,0,0,1,180,0,0,1
+		RootJoint.C0 = Lerp(RootJoint.C0,ROOTC0, 0.2 / Animation_Speed)
+		Neck.C0 = Lerp(Neck.C0,cfMul(NECKC0,angles(0.3490658503988659, 0, 0)), 0.2 / Animation_Speed)
+		RightShoulder.C0 = Lerp(RightShoulder.C0,cfMul(cfMul(cf(1.5, 0.5, 0),angles(0, 0, 1.0471975511965976)), RIGHTSHOULDERC0), 0.2 / Animation_Speed)
+		LeftShoulder.C0 = Lerp(LeftShoulder.C0,cfMul(cfMul(cf(-1.5, 0.5, 0),angles(0, 0, -1.0471975511965976)), LEFTSHOULDERC0), 0.2 / Animation_Speed)
+		RightHip.C0 = Lerp(RightHip.C0,cfMul(cfMul(cf(1, -1, 0),angles(0, 1.5707963267948966, 0)),angles(0, 0, 0.3490658503988659)), 0.2 / Animation_Speed)
+		LeftHip.C0 = Lerp(LeftHip.C0,cfMul(cfMul(cf(-1, -1, 0),angles(0, -1.5707963267948966, 0)),angles(0, 0, 0.17453292519943295)), 0.2 / Animation_Speed)
 	end
 
 	local idleOverwrite=nil
@@ -2130,15 +2137,18 @@ Neck.C0=Lerp(Neck.C0,cfMul(cf(0,1,0),angles(-1.5707963267948966,0,3.141592653589
 			idleOverwrite=function()
 				local sine = sine * 40
 				local Animation_Speed = 0.45 / deltaTime
-				LeftShoulder.C0=Lerp(LeftShoulder.C0,cfMul(cf(-1,0.5,0),angles(0,-1.5707963267948966,0)),deltaTime) 
-LeftHip.C0=Lerp(LeftHip.C0,cfMul(cf(-1,-1,0),angles(0,-1.5707963267948966,0)),deltaTime) 
-RightHip.C0=Lerp(RightHip.C0,cfMul(cf(1,-1,0),angles(0,1.5707963267948966,0)),deltaTime) 
-RootJoint.C0=Lerp(RootJoint.C0,angles(-1.5707963267948966,0,3.141592653589793),deltaTime) 
-RightShoulder.C0=Lerp(RightShoulder.C0,cfMul(cf(1,0.5,0),angles(0,1.5707963267948966,0)),deltaTime) 
-Neck.C0=Lerp(Neck.C0,cfMul(cf(0,1,0),angles(-1.5707963267948966,0,3.141592653589793)),deltaTime) 
+				RootJoint.C1 = Lerp(RootJoint.C1,ROOTC0, 0.2 / Animation_Speed)
+				Neck.C1 = Lerp(Neck.C1,cfMul(cf(0, -0.5, 0),angles(-1.5707963267948966, 0, 3.141592653589793)), 0.2 / Animation_Speed)
+				RightHip.C1 = Lerp(RightHip.C1,cfMul(cf(0.5, 1, 0),angles(0, 1.5707963267948966, 0)), 0.7 / Animation_Speed)
+				LeftHip.C1 = Lerp(LeftHip.C1,cfMul(cf(-0.5, 1, 0),angles(0, -1.5707963267948966, 0)), 0.7 / Animation_Speed)
 
---MW_animatorProgressSave: BoySpaceHair_Handle,,0,0,1,0,0,0,1,-1.40,0,0,1,0,1080,0,1,-0.15027225017547607,0,0,1,0,0,0,1,MeshPartAccessory_Handle,,0,0,1,180,,0,1,-1.27,0,0,1,90,10,0,1,0.024189945310354233,0,0,1,90,0,0,1,MeshPartAccessory_Handle,,0,0,1,90,,0,1,-0.75,0,0,1,90,0,0,1,2,0,0,1,0,0,0,1,LeftArm,-1,0,0,1,0,0,0,1,0.5,0,0,1,-90,0,0,1,0,0,0,1,0,0,0,1,MeshPartAccessory_Handle,,0,0,1,90,,0,1,-1.29,0,0,1,90,10,0,1,0.07143688201904297,0,0,1,,,0,1,LeftLeg,-1,0,0,1,0,0,0,1,-1,0,0,1,-90,0,0,1,0,0,0,1,0,0,0,1,RightLeg,1,0,0,1,0,0,0,1,-1,0,0,1,90,0,0,1,0,0,0,1,0,0,0,1,MeshPartAccessory_Handle,,0,0,1,,,0,1,,0,0,1,0,,0,1,,0,0,1,15,,0,1,Torso,0,0,0,1,-90,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,180,0,0,1,RightArm,1,0,0,1,0,0,0,1,0.5,0,0,1,90,0,0,1,0,0,0,1,0,0,0,1,MeshPartAccessory_Handle,,0,0,1,90,0,0,1,-0.75,0,0,1,-90,0,0,1,2,0,0,1,,0,0,1,Head,0,0,0,1,-90,0,0,1,1,0,0,1,0,0,0,1,0,0,0,1,180,0,0,1
-			    end
+				RootJoint.C0 = Lerp(RootJoint.C0,ROOTC0 * cf(0, 0, 0.05 * cos(sine / 12)), 1 / Animation_Speed)
+				Neck.C0 = Lerp(Neck.C0, NECKC0, 1 / Animation_Speed)
+				RightShoulder.C0 = Lerp(RightShoulder.C0, cf(1.5, 0.5, 0) * angles(0, 0, 0.4363323129985824) * RIGHTSHOULDERC0, 1 / Animation_Speed)
+				LeftShoulder.C0 = Lerp(LeftShoulder.C0, cf(-1.5, 0.5, 0) * angles(0, 0, -0.4363323129985824) * LEFTSHOULDERC0, 1 / Animation_Speed)
+				RightHip.C0 = Lerp(RightHip.C0, cf(1, -1 - 0.05 * cos(sine / 12), -0.01) * angles(0, 1.4486232791552935, 0), 1 / Animation_Speed)
+				LeftHip.C0 = Lerp(LeftHip.C0, cf(-1, -1 - 0.05 * cos(sine / 12), -0.01) * angles(0, -1.4486232791552935, 0), 1 / Animation_Speed)
+			end
 			twait(0.15)
 			idleOverwrite=function()
 				local sine = sine * 40
@@ -2389,118 +2399,3 @@ if not pcall(insSet,i10,"Parent",FindFirstChildOfClass(game,"CoreGui")) then
 	twait(3)
 	insSet(i7,"Text",guiTheme.guiTitle)
 end
-local swtc=function(txt,options,onchanged)
-	local current=0
-	local swtcbtn=nil
-	local btnpressed=function()
-		current=current+1
-		if current>#options then
-			current=1
-		end
-		local option=options[current]
-		insSet(swtcbtn,"Text",txt..": "..option.text)
-		onchanged(option.value)
-	end
-	swtcbtn=btn("change",btnpressed)
-	btnpressed()
-	return swtcbtn
-end
-
-swtc("client sided placeholders",{
-	{value=true,text="yes"},
-	{value=false,text="no"}
-},function(v)
-	placeholders=v
-end)
-
-swtc("highlight fling targets",{
-	{value=true,text="yes"},
-	{value=false,text="no"}
-},function(v)
-	highlightflingtargets=v
-end)
-
-swtc("allow shiftlock",{
-	{value=true,text="yes"},
-	{value=false,text="no"}
-},function(v)
-	allowshiftlock=v
-end)
-
-swtc("ctrl click tp",{
-	{value=true,text="yes"},
-	{value=false,text="no"}
-},function(v)
-	ctrltp=v
-end)
-
-swtc("click fling",{
-	{value=true,text="yes"},
-	{value=false,text="no"}
-},function(v)
-	clickfling=v
-end)
-
-swtc("fling enhancements",{
-	{value=3,text="all"},
-	{value=1,text="changestate physics"},
-	{value=2,text="disable sitting"},
-	{value=0,text="none"},
-},function(v)
-	flingchangestate=v
-end)
-
-swtc("respawn tp",{
-	{value=3,text="hide body"},
-	{value=0,text="stay at spawn"},
-	{value=1,text="random tp close"},
-	{value=2,text="behind char"}
-},function(v)
-	respawntp=v
-end)
-
-local disguiscripts=nil
-swtc("new gui scripts",{
-	{value=true,text="disable"},
-	{value=false,text="keep"}
-},function(v)
-	disguiscripts=v
-end)
-Connect(insGet(pg,"DescendantAdded"),function(v)
-	if c and disguiscripts and IsA(v,"Script") then --mind Enum.RunContext.Client
-		insSet(v,"Disabled",true) 
-	end
-end)
-
-swtc("new character scripts",{
-	{value=function(v)
-		if IsA(v,"Script") then --mind Enum.RunContext.Client
-			insSet(v,"Disabled",true)
-		end
-	end,text="disable"},
-	{value=false,text="keep"}
-},function(v)
-	discharscripts=v
-end)
-
-swtc("breakjoints",{
-	{value=1,text="breakjoints+health"},
-	{value=2,text="health or breakjoints"},
-	{value=3,text="breakjoints"}
-},function(v)
-	breakjointsmethod=v
-end)
-
-swtc("coregui death effect",{
-	{value=true,text="disable"},
-	{value=false,text="dont modify"},
-},function(v)
-	hidedeatheffect=v
-end)
-
-swtc("set simulation radius",{
-	{value=true,text="yes"},
-	{value=false,text="no"},
-},function(v)
-	simrad=v
-end)
